@@ -1,0 +1,90 @@
+body{background:#c9d5c1;color:#111;font-family:Inter,Arial,sans-serif}
+.resume-page{max-width:1200px;margin:auto;padding:24px}
+.resume-toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;font-size:15px;font-weight:700}
+.resume-toolbar a{text-decoration:none}
+.resume-toolbar button{border:0;background:#111;color:#fff;padding:13px 18px;border-radius:999px;font-weight:700;cursor:pointer}
+.resume{background:#fff;padding:55px 65px;box-shadow:0 10px 40px rgba(0,0,0,.06)}
+.resume-header{display:flex;justify-content:space-between;gap:40px;border-bottom:1px solid #ccd4c9;padding-bottom:35px}
+.resume-label{font-size:13px;font-weight:900;letter-spacing:.15em}
+.resume-header h1{font-size:clamp(38px,5vw,64px);line-height:.95;margin:12px 0}
+.resume-job{font-size:20px}
+.resume-contact{display:flex;flex-direction:column;gap:7px;text-align:right;font-size:14px}
+.resume-contact a{text-decoration:none}
+.resume-section{padding:35px 0;border-bottom:1px solid #ccd4c9}
+.resume-section-head{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+.resume-section-head span{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#111;color:#fff;font-size:11px;font-weight:900}
+.resume-section-head h2{font-size:14px;text-transform:uppercase;letter-spacing:.12em;margin:0}
+.resume p{font-size:16px;line-height:1.6;color:#384037}
+.resume-skills{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.resume-skills b{font-size:16px}
+.resume-skills p{margin:6px 0 0}
+.resume-project{padding:20px 0;border-top:1px solid #ccd4c9}
+.resume-project:first-child{border-top:0;padding-top:0}
+.resume-project b{display:block;font-size:18px}
+.resume-project small{display:block;margin-top:6px;color:#596158}
+.resume-project strong{font-size:14px}
+.resume-two-col{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+.resume-two-col .resume-section{border-bottom:0}
+@media(max-width:700px){
+ .resume-page{padding:12px}
+ .resume{padding:30px 22px}
+ .resume-toolbar{font-size:13px}
+ .resume-toolbar button{padding:10px 13px}
+ .resume-header,.resume-two-col,.resume-skills{display:block}
+ .resume-contact{text-align:left;margin-top:25px}
+ .resume-section{padding:28px 0}
+}
+@media print{
+ body{background:#fff}
+ .resume-page{padding:0;max-width:none}
+ .resume-toolbar{display:none}
+ .resume{box-shadow:none;padding:20px}
+}
+
+.resume-toolbar {
+  width: min(100% - 40px, 1000px);
+  margin: 0 auto;
+  padding: 24px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.resume-toolbar a {
+  color: #111;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.resume-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 999px;
+  background: #111;
+  color: white;
+  padding: 12px 18px;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.resume-download:hover {
+  opacity: 0.75;
+}
+
+@media (max-width: 640px) {
+  .resume-toolbar {
+    width: min(100% - 28px, 1000px);
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .resume-download {
+    width: 100%;
+    justify-content: center;
+  }
+}
