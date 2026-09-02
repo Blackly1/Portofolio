@@ -39,6 +39,7 @@ export default function Home() {
             DAVID.
           </a>
 
+          {/* DESKTOP NAV */}
           <div className="hidden items-center gap-7 lg:flex">
             {navItems.map(([label, href]) => (
               <a
@@ -52,13 +53,14 @@ export default function Home() {
 
             <Link
               to="/resume"
-              className="inline-flex items-center gap-2 rounded-full bg-[#111] px-5 py-2.5 text-[14px] font-bold text-white transition-transform hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 rounded-full bg-[#111] px-5 py-2.5 text-[14px] font-bold text-white"
             >
               Resume
               <Download size={15} />
             </Link>
           </div>
 
+          {/* MOBILE MENU BUTTON */}
           <button
             type="button"
             onClick={() => setMenuOpen((value) => !value)}
@@ -71,6 +73,7 @@ export default function Home() {
           </button>
         </nav>
 
+        {/* MOBILE MENU */}
         {menuOpen && (
           <div className="border-b border-black/10 py-3 lg:hidden">
             {navItems.map(([label, href]) => (
@@ -101,12 +104,13 @@ export default function Home() {
         {/* HERO */}
         <section
           id="hero"
-          className="mx-auto grid w-full max-w-[1380px] gap-10 overflow-hidden px-3 pb-16 pt-7 sm:px-8 sm:pb-24 sm:pt-10 lg:grid-cols-[1.3fr_.7fr] lg:gap-20 lg:px-12 lg:pb-28 lg:pt-16"
+          className="mx-auto grid w-full max-w-[1380px] gap-10 px-3 pb-20 pt-8 sm:px-8 sm:pt-12 lg:grid-cols-[1.3fr_.7fr] lg:gap-20 lg:px-12 lg:pb-28 lg:pt-16"
         >
 
+          {/* HERO TEXT */}
           <div className="min-w-0 self-center">
 
-            <p className="mb-5 text-[10px] font-black uppercase tracking-[0.14em] sm:mb-6 sm:text-[14px] sm:tracking-[0.17em]">
+            <p className="mb-5 text-[9px] font-black uppercase tracking-[0.12em] sm:mb-6 sm:text-[14px] sm:tracking-[0.17em]">
               Full-Stack Developer · Lagos, Nigeria
             </p>
 
@@ -142,8 +146,8 @@ export default function Home() {
             </div>
           </div>
 
-          {/* CURRENTLY BUILDING CARD */}
-          <div className="flex min-h-[390px] w-full min-w-0 flex-col justify-end overflow-hidden rounded-[4px] border border-black/10 bg-white p-6 sm:min-h-[430px] sm:p-10">
+          {/* CURRENTLY BUILDING */}
+          <div className="flex min-h-[390px] w-full min-w-0 flex-col justify-end overflow-hidden border border-black/10 bg-white p-6 sm:min-h-[430px] sm:p-10">
 
             <p className="mb-auto text-[10px] font-black uppercase tracking-[0.12em] text-[#5f774f] sm:text-xs">
               ● Currently building
@@ -272,6 +276,7 @@ export default function Home() {
               >
 
                 <div className="flex items-center justify-between gap-3">
+
                   <span className="rounded-md bg-[#C9D5C1] px-2 py-1 text-xs font-black">
                     {String(index + 1).padStart(2, "0")}
                   </span>
@@ -279,6 +284,7 @@ export default function Home() {
                   <span className="max-w-[60%] break-words text-right text-[10px] font-bold uppercase tracking-wide text-[#5f774f]">
                     {project.status}
                   </span>
+
                 </div>
 
                 <div className="mt-8 min-w-0">
@@ -309,7 +315,7 @@ export default function Home() {
                     className="mt-5 inline-flex w-fit max-w-full items-center gap-2 border-b border-[#111] pb-1 text-xs font-black uppercase tracking-[0.08em]"
                   >
                     {project.action}
-                    <ExternalLink size={14} className="shrink-0" />
+                    <ExternalLink size={14} />
                   </a>
                 ) : (
                   <span className="mt-5 inline-flex w-fit items-center gap-2 text-xs font-black uppercase tracking-[0.08em] text-black/40">
@@ -323,22 +329,22 @@ export default function Home() {
           </div>
         </section>
 
-        {/* EXPERIENCE + EDUCATION */}
+        {/* EXPERIENCE */}
         <section id="experience" className="border-t border-black/10">
+
           <div className="mx-auto grid w-full max-w-[1380px] lg:grid-cols-2">
 
-            {/* EXPERIENCE */}
             <div className="min-w-0 p-6 sm:p-10 lg:border-r lg:p-12">
 
               <SectionLabel number="04" title="Experience" />
 
-              <div className="mt-8 min-w-0">
+              <div className="mt-8">
 
                 <h3 className="break-words text-2xl font-black tracking-[-0.04em]">
                   {d.experience.title}
                 </h3>
 
-                <p className="mt-1 break-words font-semibold text-[#4b5349]">
+                <p className="mt-1 font-semibold text-[#4b5349]">
                   {d.experience.company}
                 </p>
 
@@ -351,13 +357,15 @@ export default function Home() {
                 </p>
 
                 <div className="mt-7 flex flex-wrap gap-2">
-                  <span className="inline-flex rounded-full bg-white px-4 py-2 text-sm font-bold">
+
+                  <span className="rounded-full bg-white px-4 py-2 text-sm font-bold">
                     Remote
                   </span>
 
-                  <span className="inline-flex rounded-full bg-white px-4 py-2 text-sm font-bold">
+                  <span className="rounded-full bg-white px-4 py-2 text-sm font-bold">
                     Team Collaboration
                   </span>
+
                 </div>
 
               </div>
@@ -368,13 +376,13 @@ export default function Home() {
 
               <SectionLabel number="05" title="Education" />
 
-              <div className="mt-8 min-w-0">
+              <div className="mt-8">
 
                 <h3 className="break-words text-2xl font-black tracking-[-0.04em]">
                   {d.education.school}
                 </h3>
 
-                <p className="mt-1 break-words font-semibold text-[#4b5349]">
+                <p className="mt-1 font-semibold text-[#4b5349]">
                   {d.education.program}
                 </p>
 
@@ -397,9 +405,11 @@ export default function Home() {
           id="contact"
           className="overflow-hidden bg-[#111] px-3 py-20 text-white sm:px-8 lg:px-12 lg:py-28"
         >
+
           <div className="mx-auto w-full max-w-[1380px]">
 
             <div className="flex items-center gap-3">
+
               <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-white text-xs font-black text-[#111]">
                 06
               </span>
@@ -407,6 +417,7 @@ export default function Home() {
               <p className="text-xs font-black uppercase tracking-[0.14em]">
                 Contact
               </p>
+
             </div>
 
             <h2 className="mt-10 max-w-5xl break-words text-[52px] font-black leading-[0.88] tracking-[-0.075em] sm:text-7xl lg:text-[clamp(60px,8vw,110px)]">
@@ -419,7 +430,7 @@ export default function Home() {
               href={`mailto:${d.email}`}
               className="mt-10 inline-flex max-w-full items-center gap-3 break-all text-base font-bold underline decoration-white/30 underline-offset-8 sm:text-lg"
             >
-              <Mail size={19} className="shrink-0" />
+              <Mail size={19} />
               {d.email}
             </a>
 
@@ -448,12 +459,14 @@ export default function Home() {
             </div>
           </div>
         </section>
+
       </main>
 
       {/* FOOTER */}
       <footer className="bg-[#111] px-5 py-7 text-center text-xs text-white/45">
         © {new Date().getFullYear()} {d.name}. Built with React.
       </footer>
+
     </div>
   );
 }
@@ -461,6 +474,7 @@ export default function Home() {
 function SectionLabel({ number, title }) {
   return (
     <div className="flex items-center gap-3">
+
       <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-[#111] text-xs font-black text-white">
         {number}
       </span>
@@ -468,6 +482,7 @@ function SectionLabel({ number, title }) {
       <p className="text-xs font-black uppercase tracking-[0.14em]">
         {title}
       </p>
+
     </div>
   );
 }
