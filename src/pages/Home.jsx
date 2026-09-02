@@ -27,11 +27,10 @@ export default function Home() {
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-[#C9D5C1] text-[#111]">
 
-      {/* ================= NAVBAR ================= */}
+      {/* NAVBAR */}
       <header className="mx-auto w-full max-w-[1380px] px-3 sm:px-8 lg:px-12">
-        <nav className="flex h-[76px] items-center justify-between border-b border-black/10 sm:h-[82px]">
+        <nav className="flex h-[72px] items-center justify-between border-b border-black/10 sm:h-[82px]">
 
-          {/* Logo */}
           <a
             href="#hero"
             onClick={closeMenu}
@@ -40,7 +39,6 @@ export default function Home() {
             DAVID.
           </a>
 
-          {/* Desktop Navigation */}
           <div className="hidden items-center gap-7 lg:flex">
             {navItems.map(([label, href]) => (
               <a
@@ -61,7 +59,6 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             type="button"
             onClick={() => setMenuOpen((value) => !value)}
@@ -74,7 +71,6 @@ export default function Home() {
           </button>
         </nav>
 
-        {/* Mobile Menu */}
         {menuOpen && (
           <div className="border-b border-black/10 py-3 lg:hidden">
             {navItems.map(([label, href]) => (
@@ -102,13 +98,12 @@ export default function Home() {
 
       <main>
 
-        {/* ================= HERO ================= */}
+        {/* HERO */}
         <section
           id="hero"
-          className="mx-auto grid w-full max-w-[1380px] gap-10 overflow-hidden px-3 pb-16 pt-16 sm:px-8 sm:pb-24 sm:pt-20 lg:grid-cols-[1.3fr_.7fr] lg:gap-20 lg:px-12 lg:pb-28 lg:pt-24"
+          className="mx-auto grid w-full max-w-[1380px] gap-10 overflow-hidden px-3 pb-16 pt-7 sm:px-8 sm:pb-24 sm:pt-10 lg:grid-cols-[1.3fr_.7fr] lg:gap-20 lg:px-12 lg:pb-28 lg:pt-16"
         >
 
-          {/* Hero Text */}
           <div className="min-w-0 self-center">
 
             <p className="mb-5 text-[10px] font-black uppercase tracking-[0.14em] sm:mb-6 sm:text-[14px] sm:tracking-[0.17em]">
@@ -126,7 +121,6 @@ export default function Home() {
               {d.profile}
             </p>
 
-            {/* Hero Buttons */}
             <div className="mt-8 flex w-full flex-col gap-3 sm:mt-9 sm:flex-row sm:flex-wrap">
 
               <a
@@ -148,7 +142,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Hero Card */}
+          {/* CURRENTLY BUILDING CARD */}
           <div className="flex min-h-[390px] w-full min-w-0 flex-col justify-end overflow-hidden rounded-[4px] border border-black/10 bg-white p-6 sm:min-h-[430px] sm:p-10">
 
             <p className="mb-auto text-[10px] font-black uppercase tracking-[0.12em] text-[#5f774f] sm:text-xs">
@@ -180,15 +174,13 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ================= ABOUT ================= */}
-        <section
-          id="about"
-          className="border-y border-black/10"
-        >
+        {/* ABOUT */}
+        <section id="about" className="border-y border-black/10">
           <div className="mx-auto grid w-full max-w-[1380px] lg:grid-cols-[170px_1fr]">
 
             <div className="p-6 sm:p-8 lg:p-10">
               <SectionLabel number="01" title="About" />
+
               <h2 className="mt-4 text-3xl font-black leading-none tracking-[-0.05em]">
                 Who I am
               </h2>
@@ -203,15 +195,13 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ================= SKILLS ================= */}
-        <section
-          id="skills"
-          className="border-b border-black/10"
-        >
+        {/* SKILLS */}
+        <section id="skills" className="border-b border-black/10">
           <div className="mx-auto grid w-full max-w-[1380px] lg:grid-cols-[170px_1fr]">
 
             <div className="p-6 sm:p-8 lg:p-10">
               <SectionLabel number="02" title="Skills" />
+
               <h2 className="mt-4 text-3xl font-black leading-none tracking-[-0.05em]">
                 What I
                 <br />
@@ -247,7 +237,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ================= PROJECTS ================= */}
+        {/* PROJECTS */}
         <section
           id="projects"
           className="mx-auto w-full max-w-[1380px] overflow-hidden px-3 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24"
@@ -281,7 +271,6 @@ export default function Home() {
                 className="group flex min-h-[365px] min-w-0 flex-col overflow-hidden border border-black/10 bg-white p-5 sm:p-6"
               >
 
-                {/* Number / Status */}
                 <div className="flex items-center justify-between gap-3">
                   <span className="rounded-md bg-[#C9D5C1] px-2 py-1 text-xs font-black">
                     {String(index + 1).padStart(2, "0")}
@@ -292,8 +281,8 @@ export default function Home() {
                   </span>
                 </div>
 
-                {/* Project Title */}
                 <div className="mt-8 min-w-0">
+
                   <h3 className="break-words text-[23px] font-black leading-[0.98] tracking-[-0.04em]">
                     {project.title}
                   </h3>
@@ -301,25 +290,23 @@ export default function Home() {
                   <p className="mt-2 break-words text-xs font-bold uppercase tracking-wide text-[#5f774f]">
                     {project.type}
                   </p>
+
                 </div>
 
-                {/* Description */}
                 <p className="mt-5 break-words text-[14px] leading-6 text-[#4b5349]">
                   {project.description}
                 </p>
 
-                {/* Stack */}
                 <p className="mt-auto break-words pt-7 text-xs font-bold leading-5">
                   {project.stack}
                 </p>
 
-                {/* Project Link */}
                 {project.link ? (
                   <a
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-5 inline-flex w-fit max-w-full items-center gap-2 break-words border-b border-[#111] pb-1 text-xs font-black uppercase tracking-[0.08em]"
+                    className="mt-5 inline-flex w-fit max-w-full items-center gap-2 border-b border-[#111] pb-1 text-xs font-black uppercase tracking-[0.08em]"
                   >
                     {project.action}
                     <ExternalLink size={14} className="shrink-0" />
@@ -336,14 +323,11 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ================= EXPERIENCE ================= */}
-        <section
-          id="experience"
-          className="border-t border-black/10"
-        >
+        {/* EXPERIENCE + EDUCATION */}
+        <section id="experience" className="border-t border-black/10">
           <div className="mx-auto grid w-full max-w-[1380px] lg:grid-cols-2">
 
-            {/* Experience */}
+            {/* EXPERIENCE */}
             <div className="min-w-0 p-6 sm:p-10 lg:border-r lg:p-12">
 
               <SectionLabel number="04" title="Experience" />
@@ -366,12 +350,12 @@ export default function Home() {
                   {d.experience.description}
                 </p>
 
-                <div className="mt-7">
+                <div className="mt-7 flex flex-wrap gap-2">
                   <span className="inline-flex rounded-full bg-white px-4 py-2 text-sm font-bold">
                     Remote
                   </span>
 
-                  <span className="ml-2 inline-flex rounded-full bg-white px-4 py-2 text-sm font-bold">
+                  <span className="inline-flex rounded-full bg-white px-4 py-2 text-sm font-bold">
                     Team Collaboration
                   </span>
                 </div>
@@ -379,7 +363,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Education */}
+            {/* EDUCATION */}
             <div className="min-w-0 border-t border-black/10 p-6 sm:p-10 lg:border-t-0 lg:p-12">
 
               <SectionLabel number="05" title="Education" />
@@ -408,7 +392,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ================= CONTACT ================= */}
+        {/* CONTACT */}
         <section
           id="contact"
           className="overflow-hidden bg-[#111] px-3 py-20 text-white sm:px-8 lg:px-12 lg:py-28"
@@ -431,7 +415,6 @@ export default function Home() {
               something useful.
             </h2>
 
-            {/* Email */}
             <a
               href={`mailto:${d.email}`}
               className="mt-10 inline-flex max-w-full items-center gap-3 break-all text-base font-bold underline decoration-white/30 underline-offset-8 sm:text-lg"
@@ -440,7 +423,6 @@ export default function Home() {
               {d.email}
             </a>
 
-            {/* Social Links */}
             <div className="mt-8 flex flex-wrap gap-3">
 
               <a
@@ -468,15 +450,13 @@ export default function Home() {
         </section>
       </main>
 
-      {/* ================= FOOTER ================= */}
+      {/* FOOTER */}
       <footer className="bg-[#111] px-5 py-7 text-center text-xs text-white/45">
         © {new Date().getFullYear()} {d.name}. Built with React.
       </footer>
     </div>
   );
 }
-
-/* ================= SECTION LABEL ================= */
 
 function SectionLabel({ number, title }) {
   return (
